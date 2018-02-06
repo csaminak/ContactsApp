@@ -87,6 +87,7 @@ module.exports = function(grunt) {
                         'node_modules/angular/angular.js',
                         'node_modules/angular-mocks/angular-mocks.js',
                         'src/app/js/contacts-app.module.js',
+                        'src/app/**/*.js',
                         'test/**/*.js'
                     ],
                     preprocessors: {
