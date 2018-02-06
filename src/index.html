@@ -19,10 +19,27 @@
 
     <main ng-controller>
       <form>
+
       </form>
 
       <table>
+        <colgroup span='5'></colgroup>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+          <th>Phone Number</th>
+          <th>Company</th>
+        </tr>
+        <tr>
+          <td>{{contact.firstName}}</td>
+          <td>{{contact.lastName}}</td>
+          <td>{{contact.emailAddress}}</td>
+          <td>{{contact.phoneNumber}}</td>
+          <td>{{contact.company}}</td>
+        </tr>
       </table>
+
     </main>
 
 
