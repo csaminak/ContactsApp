@@ -19,6 +19,9 @@
      * @param {Object} contact must contain firstName and lastName in order to be add
      */
     function addContact(contact) {
+      if(!contact.firstName) {
+        return;
+      }
       contactDatabase.push(contact);
     }
 
