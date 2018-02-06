@@ -28,7 +28,6 @@
     });
 
     test('addContact adds contact to contact db when given first and last name', function() {
-
       assert.strictEqual(ContactDbService.contactDatabase.length, 0);
 
       ContactDbService.addContact(testContact);
@@ -39,6 +38,7 @@
 
     test('clearAllContacts will remove all contacts from database', function() {
       ContactDbService.clearAllContacts();
+      
       assert.strictEqual(ContactDbService.contactDatabase.length, 0);
     });
 
