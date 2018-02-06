@@ -70,6 +70,7 @@
 
       assert.strictEqual(ContactDbService.getAllContacts().length, 2);
 
+      assert.deepEqual(ContactDbService.getAllContacts(), [testContact, secondContact]);
     });
 
   });
