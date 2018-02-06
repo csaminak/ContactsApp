@@ -28,32 +28,32 @@
     });
 
     test('addContact adds contact to contact db when given first and last name', function() {
-      assert.strictEqual(ContactDbService.contactDatabase.length, 0);
+      assert.strictEqual(ContactDbService.getAllContacts().length, 0);
 
       ContactDbService.addContact(testContact);
 
-      assert.strictEqual(ContactDbService.contactDatabase.length, 1);
-      assert.deepEqual(testContact, ContactDbService.contactDatabase[0]);
+      assert.strictEqual(ContactDbService.getAllContacts().length, 1);
+      assert.deepEqual(testContact, ContactDbService.getAllContacts()[0]);
     });
 
     test('clearAllContacts will remove all contacts from database', function() {
       ContactDbService.clearAllContacts();
 
-      assert.strictEqual(ContactDbService.contactDatabase.length, 0);
+      assert.strictEqual(ContactDbService.getAllContacts().length, 0);
     });
 
     test('addContact will not add contact unless it has a first name', function() {
       testContact.firstName = undefined;
       ContactDbService.addContact(testContact);
 
-      assert.strictEqual(ContactDbService.contactDatabase.length, 0);
+      assert.strictEqual(ContactDbService.getAllContacts().length, 0);
     });
 
     test('addContact will not add contact unless it has a last name', function() {
       testContact.lastName = undefined;
       ContactDbService.addContact(testContact);
 
-      assert.strictEqual(ContactDbService.contactDatabase.length, 0);
+      assert.strictEqual(ContactDbService.getAllContacts().length, 0);
     });
 
     test('getAllContacts will return all contacts', function() {
@@ -67,7 +67,7 @@
 
       ContactDbService.addContact(testContact);
       ContactDbService.addContact(secondContact);
-      
+
       assert.strictEqual(ContactDbService.getAllContacts().length, 2);
 
     });
