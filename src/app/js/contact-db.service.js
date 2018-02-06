@@ -7,6 +7,7 @@
     function ContactDbService() {
           return {
               addContact: addContact,
+              contactDatabase: contactDatabase
           };
       }
 
