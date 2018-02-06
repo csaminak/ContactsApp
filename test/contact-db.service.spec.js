@@ -12,6 +12,8 @@
       ContactDbService = contactDbService;
       $rootScope = _$rootScope_;
 
+      ContactDbService.clearAllContacts();
+
       testContact = {
         firstName: 'Jane',
         lastName: 'Doe',
@@ -20,6 +22,10 @@
         companyName: 'ConsenSys'
       }
     }));
+
+    teardown(function() {
+      ContactDbService.clearAllContacts();
+    });
 
     test('addContact adds contact to contact db when given first and last name', function() {
 
@@ -31,6 +37,18 @@
       assert.deepEqual(testContact, ContactDbService.contactDatabase[0]);
     });
 
+    test('clearAllContacts will remove all contacts from database', function() {
+      ContactDbService.clearAllContacts();
+      assert.strictEqual(ContactDbService.contactDatabase.length, 0);
+    });
+
+    test('addContact will not add contact unless it has a first name', function() {
+      testContact.firstName = undefined;
+      ContactDbService.addContact(testContact);
+
+      assert.strictEqual(ContactDbService.contactDatabase.length, 0);
+
+    });
 
   });
 
