@@ -4,20 +4,20 @@
   var assert = chai.assert;
 
   suite('ContactDbService Tests', function() {
-    var ContactDbService, $rootScope;
+    var ContactDbService, $rootScope, testContact;
 
     setup(module('contactsApp'));
 
-    setup(inject(function(ContactDbService, _$rootScope_) {
+    setup(inject(function(contactDbService, _$rootScope_) {
       ContactDbService = contactDbService;
       $rootScope = _$rootScope_;
 
       testContact = {
-              firstName: 'Jane',
-              lastName: 'Doe',
-              emailAddress: 'jdoe@gmail.com',
-              phoneNumber: '123-456-7890',
-              companyName: 'ConsenSys'
+        firstName: 'Jane',
+        lastName: 'Doe',
+        emailAddress: 'jdoe@gmail.com',
+        phoneNumber: '123-456-7890',
+        companyName: 'ConsenSys'
       }
     }));
 
@@ -25,7 +25,7 @@
 
       ContactDbService.addContact(testContact);
 
-      
+      assert.strictEqual(ContactDbService.contactDatabase.length, 1);
 
     });
 
