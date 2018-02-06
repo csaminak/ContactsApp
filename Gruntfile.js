@@ -73,32 +73,32 @@ module.exports = function(grunt) {
         },
 
         karma: {
-                all: {
-                    options: {
-                        frameworks: ['chai', 'mocha'],
-                        client: {
-                            mocha: {
-                                ui: 'tdd'
-                            }
-                        },
-                        browsers: ['PhantomJS'],
-                        singleRun: true,
-                        files: [
-                            'node_modules/angular/angular.js',
-                            'node_modules/angular-mocks/angular-mocks.js',
-                            'src/app/js/contacts-app.module.js',
-                            'test/**/*.js'
-                        ],
-                        preprocessors: {
-                            'src/app/js/**/*.js': ['coverage']
-                        },
-                        reporters: ['dots', 'coverage'],
-                        coverageReporter: {
-                            type: 'text-summary'
+            all: {
+                options: {
+                    frameworks: ['chai', 'mocha'],
+                    client: {
+                        mocha: {
+                            ui: 'tdd'
                         }
+                    },
+                    browsers: ['PhantomJS'],
+                    singleRun: true,
+                    files: [
+                        'node_modules/angular/angular.js',
+                        'node_modules/angular-mocks/angular-mocks.js',
+                        'src/app/js/contacts-app.module.js',
+                        'test/**/*.js'
+                    ],
+                    preprocessors: {
+                        'src/app/js/**/*.js': ['coverage']
+                    },
+                    reporters: ['dots', 'coverage'],
+                    coverageReporter: {
+                        type: 'text-summary'
                     }
                 }
             }
+        }
 
     });
 
