@@ -47,7 +47,13 @@
       ContactDbService.addContact(testContact);
 
       assert.strictEqual(ContactDbService.contactDatabase.length, 0);
+    });
 
+    test('addContact will not add contact unless it has a last name', function() {
+      testContact.lastName = undefined;
+      ContactDbService.addContact(testContact);
+
+      assert.strictEqual(ContactDbService.contactDatabase.length, 0);
     });
 
   });
