@@ -17,12 +17,33 @@
       <h1>Contacts App</h1>
     </header>
 
-    <main ng-controller>
-      <form>
-
+    <main ng-controller=''>
+      <form name='' ng-submit=''>
+        <div>
+          <label for='firstName'>First Name</label>
+          <input id='firstName' name='firstName' type='text' placeholder='Jane' ng-model=''>
+        </div>
+        <div>
+          <label for='lastName'>Last Name</label>
+          <input id='lastName' name='lastName' type='text' placeholder='Doe' ng-model=''>
+        </div>
+        <div>
+          <label for='email'>Email Address</label>
+          <input id='email' name='email' type='email' placeholder='jane.doe@gmail.com' ng-model=''>
+        </div>
+        <div>
+          <label for='phone'>Phone Number</label>
+          <input id='phone' name='phone' type='tel' placeholder='284-245-9876' ng-model=''>
+        </div>
+        <div>
+          <label for='company'>Company Name</label>
+          <input id='company' name='company' type='text' placeholder='Awesome Company' ng-model=''>
+        </div>
+        <input type='submit'>
       </form>
 
-      <table>
+      <table ng-show=''>
+        <h3>Contact List</h3>
         <colgroup span='5'></colgroup>
         <tr>
           <th>First Name</th>
@@ -30,6 +51,7 @@
           <th>Email Address</th>
           <th>Phone Number</th>
           <th>Company</th>
+          <th></th>
         </tr>
         <tr>
           <td>{{contact.firstName}}</td>
@@ -37,6 +59,11 @@
           <td>{{contact.emailAddress}}</td>
           <td>{{contact.phoneNumber}}</td>
           <td>{{contact.company}}</td>
+          <td>
+            <button ng-click=''>
+              Delete Contact
+            </button>
+          </td>
         </tr>
       </table>
 
