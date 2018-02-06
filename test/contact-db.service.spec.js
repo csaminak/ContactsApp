@@ -4,7 +4,7 @@
   var assert = chai.assert;
 
   suite('ContactDbService Tests', function() {
-    var ContactDbService, $rootScope, testContact;
+    var ContactDbService, $rootScope, testContact, secondContact;
 
     setup(module('contactsApp'));
 
@@ -20,7 +20,15 @@
         emailAddress: 'jdoe@gmail.com',
         phoneNumber: '123-456-7890',
         companyName: 'ConsenSys'
-      }
+      };
+
+      secondContact = {
+        firstName: 'John',
+        lastName: 'Smith',
+        emailAddress: 'jsmith@gmail.com',
+        phoneNumber: '456-980-1234',
+        companyName: 'ConsenSys'
+      };
     }));
 
     teardown(function() {
@@ -57,14 +65,6 @@
     });
 
     test('getAllContacts will return all contacts', function() {
-      var secondContact = {
-        firstName: 'John',
-        lastName: 'Smith',
-        emailAddress: 'jsmith@gmail.com',
-        phoneNumber: '456-980-1234',
-        companyName: 'ConsenSys'
-      }
-
       ContactDbService.addContact(testContact);
       ContactDbService.addContact(secondContact);
 

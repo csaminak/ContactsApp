@@ -8,7 +8,8 @@
       return {
           addContact: addContact,
           clearAllContacts: clearAllContacts,
-          getAllContacts: getAllContacts
+          getAllContacts: getAllContacts,
+          removeContact:removeContact
       };
       }
 
@@ -38,6 +39,18 @@
      */
     function getAllContacts() {
       return contactDatabase;
+    }
+
+    /**
+     * Will remove a contact by finding it's index in the array using a unique identifier (emailAddress)
+     * @param  {String} contactEmailAddress Email of contact, should be unique to each contact
+     */
+    function removeContact(contactEmailAddress) {
+      var contactToRemove = contactDatabase.findIndex(function (contact) {
+        return contact.emailAddress === contactEmailAddress;
+      });
+
+      contactDatabase.splice(contactToRemove, 1);
     }
 
 })();
