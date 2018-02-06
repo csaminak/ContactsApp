@@ -1,6 +1,13 @@
 (function() {
     'use strict';
 
+    angular.module('contactsApp', []);
+
+})();
+
+(function() {
+    'use strict';
+
     angular.module('contactsApp')
         .factory('contactDbService', ContactDbService);
 
@@ -42,3 +49,5 @@
     }
 
 })();
+
+//# sourceMappingURL=main.js.map
