@@ -23,10 +23,12 @@
 
     test('addContact adds contact to contact db when given first and last name', function() {
 
+      assert.strictEqual(ContactDbService.contactDatabase.length, 0);
+
       ContactDbService.addContact(testContact);
 
       assert.strictEqual(ContactDbService.contactDatabase.length, 1);
-
+      assert.deepEqual(testContact, ContactDbService.contactDatabase[0]);
     });
 
 
