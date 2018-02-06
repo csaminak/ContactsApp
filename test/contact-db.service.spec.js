@@ -12,10 +12,20 @@
       ContactDbService = contactDbService;
       $rootScope = _$rootScope_;
 
+      testContact = {
+              firstName: 'Jane',
+              lastName: 'Doe',
+              emailAddress: 'jdoe@gmail.com',
+              phoneNumber: '123-456-7890',
+              companyName: 'ConsenSys'
+      }
     }));
 
-    test('', function() {
+    test('addContact adds contact to contact db when given first and last name', function() {
 
+      ContactDbService.addContact(testContact);
+
+      
 
     });
 
