@@ -1,6 +1,13 @@
 (function() {
     'use strict';
 
+    angular.module('contactsApp', []);
+
+})();
+
+(function() {
+    'use strict';
+
     angular.module('contactsApp')
         .factory('contactDbService', ContactDbService);
 
@@ -42,16 +49,19 @@
     }
 
     /**
-     * Will remove a contact by looping through the contacts and using a unique
-     * identifier (emailAddress) to find the index of the contact to remove.
+     * Will remove a contact by finding it's index in the array using a unique identifier (emailAddress)
      * @param  {String} contactEmailAddress Email of contact, should be unique to each contact
      */
     function removeContact(contactEmailAddress) {
-      contactDatabase.forEach(function (contact, index) {
-        if (contact.emailAddress === contactEmailAddress) {
-           contactDatabase.splice(index, 1);
+
+      contactDatabase.forEach(function(contact) {
+        if(contact.emailAddress === contactEmailAddress) {
+          contactDatabase.splice(contactDatabase.indexOf(contact), 1);
         }
       });
+
     }
 
 })();
+
+//# sourceMappingURL=main.js.map
