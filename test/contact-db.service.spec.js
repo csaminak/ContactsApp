@@ -73,7 +73,16 @@
       assert.deepEqual(ContactDbService.getAllContacts(), [testContact, secondContact]);
     });
 
-  });
+    test('removeContact will remove specified contact', function() {
+      ContactDbService.addContact(testContact);
+      ContactDbService.addContact(secondContact);
 
+      ContactDbService.removeContact(testContact.emailAddress);
+
+      assert.strictEqual(ContactDbService.getAllContacts().length, 1);
+      assert.deepEqual(ContactDbService.getAllContacts(), [secondContact]);
+    });
+
+  });
 
 }());
