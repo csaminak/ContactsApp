@@ -4,16 +4,16 @@
     angular.module('contactsApp')
         .factory('contactDbService', ContactDbService);
 
-        function ContactDbService() {
-              return {
-                  addContact: addContact,
-              };
-          }
+    function ContactDbService() {
+          return {
+              addContact: addContact,
+          };
+      }
 
-        var contactDatabase = [];
+    var contactDatabase = [];
 
-        function addContact(contact) {
-          contactDatabase.push(contact);
-        }
+    function addContact(contact) {
+      contactDatabase.push(contact);
+    }
 
 })();
