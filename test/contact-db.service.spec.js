@@ -38,7 +38,7 @@
 
     test('clearAllContacts will remove all contacts from database', function() {
       ContactDbService.clearAllContacts();
-      
+
       assert.strictEqual(ContactDbService.contactDatabase.length, 0);
     });
 

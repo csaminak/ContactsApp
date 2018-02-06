@@ -26,7 +26,7 @@
      * remove all contacts from database by setting it to an empty array
      */
     function clearAllContacts() {
-      contactDatabase = [];
+      contactDatabase.length = 0;
     }
 
 })();
