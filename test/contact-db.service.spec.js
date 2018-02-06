@@ -56,6 +56,22 @@
       assert.strictEqual(ContactDbService.contactDatabase.length, 0);
     });
 
+    test('getAllContacts will return all contacts', function() {
+      var secondContact = {
+        firstName: 'John',
+        lastName: 'Smith',
+        emailAddress: 'jsmith@gmail.com',
+        phoneNumber: '456-980-1234',
+        companyName: 'ConsenSys'
+      }
+
+      ContactDbService.addContact(testContact);
+      ContactDbService.addContact(secondContact);
+      
+      assert.strictEqual(ContactDbService.getAllContacts().length, 2);
+
+    });
+
   });
 
 
