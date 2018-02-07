@@ -17,27 +17,27 @@
       <h1>Contacts App</h1>
     </header>
 
-    <main ng-controller=''>
-      <form name='' ng-submit=''>
+    <main ng-controller='ContactsController as contactsCtrl'>
+      <form name='contactForm' ng-submit='contactsCtrl.saveContact(contactsCtrl.contact)'>
         <div>
           <label for='firstName'>First Name</label>
-          <input id='firstName' name='firstName' type='text' placeholder='Jane' ng-model=''>
+          <input id='firstName' name='firstName' type='text' placeholder='Jane' ng-model='contactsCtrl.contact.firstName'>
         </div>
         <div>
           <label for='lastName'>Last Name</label>
-          <input id='lastName' name='lastName' type='text' placeholder='Doe' ng-model=''>
+          <input id='lastName' name='lastName' type='text' placeholder='Doe' ng-model='contactsCtrl.contact.lastName'>
         </div>
         <div>
           <label for='email'>Email Address</label>
-          <input id='email' name='email' type='email' placeholder='jane.doe@gmail.com' ng-model=''>
+          <input id='email' name='email' type='email' placeholder='jane.doe@gmail.com' ng-model='contactsCtrl.contact.emailAddress'>
         </div>
         <div>
           <label for='phone'>Phone Number</label>
-          <input id='phone' name='phone' type='tel' placeholder='284-245-9876' ng-model=''>
+          <input id='phone' name='phone' type='tel' placeholder='284-245-9876' ng-model='contactsCtrl.contact.phoneNumber'>
         </div>
         <div>
           <label for='company'>Company Name</label>
-          <input id='company' name='company' type='text' placeholder='Awesome Company' ng-model=''>
+          <input id='company' name='company' type='text' placeholder='Awesome Company' ng-model='contactsCtrl.contact.companyName'>
         </div>
         <input type='submit'>
       </form>
