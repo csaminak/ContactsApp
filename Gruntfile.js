@@ -16,14 +16,6 @@ module.exports = function(grunt) {
             }
         },
 
-        sass: {
-            all: {
-                files: {
-                    'build/css/styles.css': 'src/sass/main.scss'
-                }
-            }
-        },
-
         copy: {
             html: {
                 files: [{
@@ -54,10 +46,6 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            sass: {
-                files: ['src/sass/**/*.scss'],
-                tasks: ['sass']
-            },
             js: {
                 files: ['src/app/**/*.js'],
                 tasks: ['jshint', 'concat']
@@ -104,7 +92,6 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -112,6 +99,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('test', ['karma']);
-    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concat', 'sass', 'copy']);
+    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concat', 'copy']);
     grunt.registerTask('default', ['build']);
 };
