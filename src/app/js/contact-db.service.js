@@ -12,7 +12,7 @@
           removeContact:removeContact
       };
       }
-
+    var SESSION_STORAGE_KEY = 'contactDatabase';
     var contactDatabase = [];
 
     /**
@@ -24,6 +24,7 @@
         return null;
       }
       contactDatabase.push(contact);
+      sessionStorage.setItem(SESSION_STORAGE_KEY, angular.toJson(contactDatabase));
       return contact;
     }
 
@@ -32,6 +33,7 @@
      */
     function clearAllContacts() {
       contactDatabase.length = 0;
+      sessionStorage.removeItem(SESSION_STORAGE_KEY);
     }
 
     /**
@@ -53,6 +55,8 @@
            contactDatabase.splice(index, 1);
         }
       });
+
+      sessionStorage.setItem(SESSION_STORAGE_KEY, angular.toJson(contactDatabase));
     }
 
 })();
