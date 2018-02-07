@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         karma: {
             all: {
                 options: {
-                    frameworks: ['chai', 'mocha'],
+                    frameworks: ['chai', 'mocha', 'sinon'],
                     client: {
                         mocha: {
                             ui: 'tdd'
