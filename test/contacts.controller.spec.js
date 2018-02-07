@@ -7,7 +7,8 @@
 
     var ContactsController, $rootScope, testContact, secondContact;
     var mockContactDbService = {
-      addContact: sinon.spy()
+      addContact: sinon.spy(),
+      removeContact: sinon.spy()
     };
 
     setup(module('contactsApp'));
@@ -35,8 +36,6 @@
         companyName: 'ConsenSys'
       };
 
-
-
       ContactsController = $controller('ContactsController');
 
     }));
@@ -45,6 +44,12 @@
       ContactsController.saveContact(testContact);
       assert.strictEqual(mockContactDbService.addContact.calledOnce, true);
       assert.deepEqual(mockContactDbService.addContact.getCall(0).args[0], testContact);
+    });
+
+    test('removeContact will delete the specified contact from database', function() {
+      ContactsController.deleteContact(testContact.emailAddress);
+      assert.strictEqual(mockContactDbService.removeContact.calledOnce, true);
+      assert.strictEqual(mockContactDbService.removeContact.getCall(0).args[0], testContact.emailAddress);
     });
 
   });

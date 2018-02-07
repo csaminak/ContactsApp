@@ -11,12 +11,16 @@
 
     this.contact = {};
     this.saveContact = saveContact;
+    this.deleteContact = deleteContact;
 
 
     function saveContact(contact) {
       contactDbService.addContact(contact);
     }
 
+    function deleteContact(contactEmailAddress) {
+      contactDbService.removeContact(contactEmailAddress);
+    }
 
   }
 
