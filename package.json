@@ -22,6 +22,7 @@
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-karma": "^2.0.0",
+    "http-server": "^0.11.1",
     "karma": "^2.0.0",
     "karma-chai": "^0.1.0",
     "karma-coverage": "^1.1.1",
