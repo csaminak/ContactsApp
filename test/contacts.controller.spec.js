@@ -8,7 +8,10 @@
     var ContactsController, $rootScope, testContact, secondContact;
     var mockContactDbService = {
       addContact: sinon.spy(),
-      removeContact: sinon.spy()
+      removeContact: sinon.spy(),
+      getAllContacts: sinon.spy(function() {
+        return [testContact, secondContact]
+      })
     };
 
     setup(module('contactsApp'));
@@ -50,6 +53,13 @@
       ContactsController.deleteContact(testContact.emailAddress);
       assert.strictEqual(mockContactDbService.removeContact.calledOnce, true);
       assert.strictEqual(mockContactDbService.removeContact.getCall(0).args[0], testContact.emailAddress);
+    });
+
+    test('getAllContacts will retrieve all contacts from database', function() {
+      var expectedContacts = [testContact, secondContact];
+      ContactsController.getAllContacts();
+      assert.strictEqual(mockContactDbService.getAllContacts.calledOnce, true);
+      assert.deepEqual(ContactsController.contactList, expectedContacts);
     });
 
   });
