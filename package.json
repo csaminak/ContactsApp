@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "A very basic web interface for a database that stores contact information data in a relational database, and displays the information back to the user.",
   "main": "Gruntfile.js",
+  "scripts": {
+    "postinstall": "grunt build",
+    "start": "http-server ./build/ -p $PORT",
+    "test": "grunt test"
+  },
   "dependencies": {
     "angular": "^1.6.9",
     "angular-mocks": "^1.6.9",
@@ -25,9 +30,6 @@
     "karma-sinon": "^1.0.5",
     "mocha": "^5.0.0",
     "sinon": "^4.2.2"
-  },
-  "scripts": {
-    "test": "grunt test"
   },
   "repository": {
     "type": "git",
