@@ -42,8 +42,8 @@
         <input type='submit'>
       </form>
 
-      <table ng-show=''>
-        <h3>Contact List</h3>
+      <table ng-show='contactsCtrl.contactList.length > 0'>
+        <h3 ng-show='contactsCtrl.contactList.length > 0'>Contact List</h3>
         <colgroup span='5'></colgroup>
         <tr>
           <th>First Name</th>
@@ -53,14 +53,14 @@
           <th>Company</th>
           <th></th>
         </tr>
-        <tr>
-          <td>{{contact.firstName}}</td>
-          <td>{{contact.lastName}}</td>
-          <td>{{contact.emailAddress}}</td>
-          <td>{{contact.phoneNumber}}</td>
-          <td>{{contact.company}}</td>
+        <tr ng-repeat='person in contactsCtrl.contactList track by $index'>
+          <td>{{person.firstName}}</td>
+          <td>{{person.lastName}}</td>
+          <td>{{person.emailAddress}}</td>
+          <td>{{person.phoneNumber}}</td>
+          <td>{{person.company}}</td>
           <td>
-            <button ng-click=''>
+            <button ng-click='contactsCtrl.deleteContact(person.emailAddress)'>
               Delete Contact
             </button>
           </td>

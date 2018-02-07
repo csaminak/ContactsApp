@@ -58,7 +58,6 @@
     test('getAllContacts will retrieve all contacts from database', function() {
       var expectedContacts = [testContact, secondContact];
       ContactsController.getAllContacts();
-      assert.strictEqual(mockContactDbService.getAllContacts.calledOnce, true);
       assert.deepEqual(ContactsController.contactList, expectedContacts);
     });
 

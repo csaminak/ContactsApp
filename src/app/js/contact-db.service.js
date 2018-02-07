@@ -21,9 +21,10 @@
      */
     function addContact(contact) {
       if(!contact.firstName || !contact.lastName) {
-        return;
+        return null;
       }
       contactDatabase.push(contact);
+      return contact;
     }
 
     /**

@@ -16,12 +16,16 @@
     this.deleteContact = deleteContact;
     this.getAllContacts = getAllContacts;
 
+    // fetch contacts so the full list shows immediately
+    getAllContacts();
+
     /**
      * takes contact from form and sends it to contactDbService
      * @param  {Object} contact contact that will be added
      */
     function saveContact(contact) {
       contactDbService.addContact(contact);
+      controller.contact = {};
     }
 
     /**
