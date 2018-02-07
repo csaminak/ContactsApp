@@ -9,6 +9,8 @@
   function ContactsController(contactDbService) {
     var controller = this;
 
+    this.sortReverse = false;
+
     this.contact = {};
     this.contactList = null;
 

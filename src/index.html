@@ -42,6 +42,8 @@
         <input type='submit'>
       </form>
 
+      <button ng-click='contactsCtrl.sortReverse = !contactsCtrl.sortReverse'>Sort by Email Address Asc / Desc</button>
+
       <table ng-show='contactsCtrl.contactList.length > 0'>
         <h3 ng-show='contactsCtrl.contactList.length > 0'>Contact List</h3>
         <colgroup span='5'></colgroup>
@@ -53,7 +55,7 @@
           <th>Company</th>
           <th></th>
         </tr>
-        <tr ng-repeat='person in contactsCtrl.contactList track by $index'>
+        <tr ng-repeat='person in contactsCtrl.contactList | orderBy:emailAddress:contactsCtrl.sortReverse'>
           <td>{{person.firstName}}</td>
           <td>{{person.lastName}}</td>
           <td>{{person.emailAddress}}</td>
