@@ -31,4 +31,6 @@ A very basic web interface for a database that stores contact information data i
 
 
 ### Running Locally
-- 
+Run the following commands:
+- `npm install`
+- `npm start`
