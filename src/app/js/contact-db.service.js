@@ -13,7 +13,7 @@
       };
       }
     var SESSION_STORAGE_KEY = 'contactDatabase';
-    var contactDatabase = [];
+    var contactDatabase = JSON.parse(sessionStorage.getItem(SESSION_STORAGE_KEY)) || [];
 
     /**
      * add contact to contactDatabase
