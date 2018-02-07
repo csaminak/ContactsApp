@@ -34,7 +34,7 @@
       secondContact = {
         firstName: 'John',
         lastName: 'Smith',
-        emailAddress: 'jsmith@gmail.com',
+        emailAddress: 'jsmith@gmail.net',
         phoneNumber: '456-980-1234',
         companyName: 'ConsenSys'
       };
@@ -59,6 +59,16 @@
       var expectedContacts = [testContact, secondContact];
       ContactsController.getAllContacts();
       assert.deepEqual(ContactsController.contactList, expectedContacts);
+    });
+
+    test('toggleFilterDotComEmails will toggle filtering to emails that end with .com', function() {
+      ContactsController.toggleFilterDotComEmails();
+      assert.strictEqual(ContactsController.filterDotComEmails, true);
+      assert.deepEqual(ContactsController.contactList, [testContact]);
+
+      ContactsController.toggleFilterDotComEmails();
+      assert.strictEqual(ContactsController.filterDotComEmails, false);
+      assert.deepEqual(ContactsController.contactList, [testContact, secondContact]);
     });
 
   });

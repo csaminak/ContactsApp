@@ -42,7 +42,9 @@
         <input type='submit'>
       </form>
 
-      <button ng-click='contactsCtrl.sortReverse = !contactsCtrl.sortReverse'>Sort by Email Address Asc / Desc</button>
+      <br />
+      <button ng-click='contactsCtrl.sortReverse = !contactsCtrl.sortReverse'>Toggle Email Address Sort</button>
+      <button ng-click='contactsCtrl.toggleFilterDotComEmails()'>Toggle .com emails only</button>
 
       <table ng-show='contactsCtrl.contactList.length > 0'>
         <h3 ng-show='contactsCtrl.contactList.length > 0'>Contact List</h3>
