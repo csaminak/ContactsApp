@@ -20,9 +20,10 @@
      * @param {Object} contact must contain firstName and lastName in order to be add
      */
     function addContact(contact) {
-      if(!contact.firstName || !contact.lastName) {
+      if(!contact.emailAddress) {
         return null;
       }
+
       contactDatabase.push(contact);
       sessionStorage.setItem(SESSION_STORAGE_KEY, angular.toJson(contactDatabase));
       return contact;
